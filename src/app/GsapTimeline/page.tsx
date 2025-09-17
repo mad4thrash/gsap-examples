@@ -44,6 +44,14 @@ const TimeLine = () => {
 				ease: "back.inOut",
 			});
 	}, []);
+
+	const handlePlayPause = () => {
+		if (timeline.isActive()) {
+			timeline.pause();
+		} else {
+			timeline.play();
+		}
+	};
 	return (
 		<main>
 			<h1 className="text-xl text-gray-50">Gsap Timeline</h1>
@@ -74,7 +82,7 @@ const TimeLine = () => {
 				documentation.
 			</p>
 			<div className="mt-20 space-y-10">
-				<button onClick={() => {}}>Play/Pause</button>
+				<button onClick={handlePlayPause}>Play/Pause</button>
 				<div
 					id="yellow-box"
 					className="w-20 h-20 bg-yellow-500 rounded-lg"
